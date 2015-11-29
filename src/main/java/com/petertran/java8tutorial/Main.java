@@ -5,6 +5,7 @@ import com.petertran.java8tutorial.town.Town;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 
 /**
@@ -38,9 +39,7 @@ public class Main {
     towns.stream().forEach((town) -> {
       System.out.println(town);
     });
-    
-    
-    
+      
     /** Therefore no longer required
      *  Collections.sort(towns, new Town(){
      *  @Override
@@ -49,6 +48,16 @@ public class Main {
      *    }
      *  }
      */
+    
+    
+    System.out.println("-- Towns - Population > 30000 --");
+    List<Town> gt30000 = towns.stream()
+            .filter(town -> town.getPopulation() > 30000)
+            .collect(Collectors.toList());
+    
+    gt30000.stream().forEach((town) -> {
+      System.out.println(town);
+    });
     
   }
   
