@@ -1,6 +1,5 @@
 package com.petertran.java8tutorial.town;
 
-import java.util.Comparator;
 /**
  * @author petertran
  */
@@ -24,7 +23,7 @@ public class Town {
   }
    
   public String toString(){
-    return String.format("Name: %s, City: %s, Country: %s, Population: %d\n", 
-            this.name, this.city, this.country, this.population);
+    String format = "Name: %s, City: %s, Country: %s, Population: %d\n";
+    return String.format(format, this.name, this.city, this.country, this.population);
   }
 }
